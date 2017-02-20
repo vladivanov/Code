@@ -1,0 +1,162 @@
+/**
+ * @file components/search
+ * This is a set of styles for search controls for use in the site
+ *
+ */
+
+/**
+ * search-controls
+ * This is a style for search controls.
+ */
+.search-controls {
+  padding-top:15px;
+  .search-filter {
+
+    // Label Style.
+    label {
+      color: #999999;
+      line-height: 1.2em;
+      font-size: 1em;
+      font-weight: 600;
+      padding-bottom: 0.5em;
+      margin: 0px;
+    }
+
+    .search-item {
+      display:block;
+
+      input {
+        height: 38.9px;
+        border: 1px solid #dddddd;
+        width: 269px;
+        padding-left: 10px;
+      }
+
+      select {
+        height: 38.9px;
+        border: 1px solid #dddddd;
+        width: 269px;
+        padding-left: 10px;
+        background-color: white;
+        color: $dark-gray;
+      }
+
+      .date-input {
+        width: 69px;
+        padding-left:10px;
+      }
+    }
+  }
+}
+
+/**
+ * search-controls
+ * This is a style for text that summarizes search conditions.
+ */
+.search-summary {
+  color: $gray-text;
+  font-size: $font-size-h2;
+  line-height: 1.2em;
+  font-style: italic;
+}
+
+/**
+ * search-toggle
+ * This is a style for the search icon in the eyebrow menu.
+ */
+.search-toggle {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  font-size:14px;
+  line-height: 2em;
+
+  // Making the icon mirrored.
+  -moz-transform: scale(-1, 1);
+  -webkit-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+
+  .fa-search {
+    text-decoration: none;
+    color: white;
+    font-weight: 100;
+  }
+
+}
+
+/**
+ * .search-toggle-mobile
+ * This is a style for the search icon on mobile and small screens.
+ */
+.search-toggle-mobile {
+  a {
+    top: 12px;
+    position: absolute;
+    left: 20px;
+    color: $blue-primary;
+    font-size: 27px;
+  }
+}
+
+// Breakpoints for small screens.
+@media screen and (max-width: $screen-sm) {
+  .search-toggle-mobile {
+    a {
+      font-size: 27px;
+      top: 0px;
+      display: inline-block;
+      padding: 11px 28px;
+      left: -12px;
+    }
+    a:hover {
+      background-color: $blue-primary;
+      color:white;
+    }
+  }
+
+}
+
+// Breakpoints for medium and large screens. Hiding the search icon.
+@media all and (min-width: $screen-sm) {
+  .search-toggle-mobile {
+    display: none;
+  }
+}
+
+/**
+ * .search-bar
+ * This is a style for the search Bar on mobile and small screens.
+ */
+.search-bar {
+  display:none;
+}
+
+// Breakpoints for search-bar on mobile screen.
+@media screen and (max-width: $screen-md) {
+  .search-bar {
+    display:none;
+    width:100%;
+    color:$blue-primary;
+
+
+    .input-form {
+      width:100%;
+      padding:25px 0px 25px 20px;
+      font-weight: 300;
+      font-style: italic;
+    }
+
+    .input-group-btn {
+      display:none;
+    }
+
+  }
+
+  .search-bar-active {
+    a {
+      background-color: $blue-primary;
+      color:white;
+    }
+  }
+}

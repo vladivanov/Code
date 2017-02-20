@@ -1,0 +1,258 @@
+/**
+ * @file components/hero-image
+ * This is a set of styles for hero images on the site.
+ *
+ */
+
+ /**
+  * .hero-image
+  * This is a class for styling the hero images on the site.
+  *
+  */
+.hero-image {
+  position: absolute;
+  top:116px;
+  left: 0;
+  width: 100%;
+  min-width: 100%;
+  z-index: -1;
+  margin: 0px;
+  height: 700px;
+
+  @media (max-width: $grid-float-breakpoint-max) {
+    top: -30px;
+    position: relative;
+    height: 207px;
+    .overlay {
+      display:none;
+    }
+  }
+
+   img {
+     display: block;
+     vertical-align: middle;
+     width: 100%;
+     max-width: 100%;
+     height: 700px;
+     position: absolute;
+     background-size:cover;
+   }
+
+
+  .overlay {
+    bottom: 0;
+    height: 100px;
+    position: absolute;
+    width: 100%;    background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
+  }
+}
+
+/**
+ * .has-hero-img
+ * This is a class for styling content on pages with hero iamges.
+ *
+ */
+.has-hero-img {
+  margin-top: 300px;
+
+  .content-wrapper {
+    background-color: white;
+    border: 1px solid $gray-border;
+    padding: $grid-gutter-width-2;
+  }
+}
+
+/**
+ * Breaking points for page title on extra small screens.
+ */
+@media screen and (max-width: $screen-xs) {
+  .hero-image {
+
+    img {
+      height: 313px;
+    }
+  }
+
+  .has-hero-img {
+    margin-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+
+
+    .content-wrapper {
+      padding: 0px;
+      border:none;
+    }
+  }
+}
+
+/**
+ * .no-hero-image
+ * This is a class for adding margin-top on the main container on pages without hero images.
+ *
+ */
+.no-hero-image {
+  .main-container {
+    margin-top:4.7em;
+  }
+
+  /**
+   * Breaking points for page title on extra small screens.
+   */
+  @media screen and (max-width: $screen-xs) {
+    .main-container {
+      margin-top:0px;
+      padding:0px;
+    }
+  }
+}
+
+/**
+ * .page-has-hero-img
+ * This is a class applied to the body for pages that have a hero image that's not added through a field..
+ *
+ */
+.page-has-hero-img {
+  .main-container {
+    margin-top: 300px;
+    .content-wrapper {
+      background-color: white;
+      border: 1px solid $gray-border;
+    }
+
+    //Breakpoints for small screen.
+    @media (max-width: $screen-sm) {
+      margin-top: 0px;
+      padding:0px;
+
+      .content-wrapper {
+        border: none;
+      }
+     }
+
+     //Breakpoints for small screen to large screen.
+     @media (min-width: $screen-sm) {
+       margin-top: 300px;
+      }
+  }
+
+  &.page-homepage{
+    .main-container{
+      margin-top: 600px;
+      position:relative;
+      z-index: 1;
+
+      .content-wrapper{
+        background: transparent;
+      }
+
+      @media (max-width: $screen-sm) {
+        margin-top: 77px;
+      }
+    }
+  }
+
+  .hero-image-nofield {
+    display: block;
+
+    @media screen and (max-width: $screen-sm) {
+      min-height:315px;
+      margin-bottom: -108px;
+    }
+  }
+
+  .hero-article{
+    width: 320px;
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    padding: 24px 32px;
+    min-height: 490px;
+    position: relative;
+    z-index: 2;
+    @media screen and (max-width: $screen-sm) {
+      min-height: 0px;
+      width: auto;
+      margin-top: 20px;
+      padding: 12px 32px;
+    }
+  }
+}
+
+
+/**
+ * .hero-image-nofield
+ * This is a class for the hero image wrapper if it's not added through a field.
+ * It hides everything unless .page-has-hero-img is on the body.
+ *
+ */
+.hero-image-nofield {
+  display: none;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+/**
+ * .hero-image-media-lib
+ * Apply hero image to media library.
+ */
+.front {
+  .hero-image {
+    background-image: url('../assets/images/hero/org_home.jpg');
+    z-index: 1
+  }
+}
+
+/**
+ * .hero-image-media-lib
+ * Apply hero image to media library.
+ */
+.hero-image-media-lib {
+  .hero-image {
+    background-image: url('../assets/images/hero/ch_library.jpeg');
+  }
+}
+
+
+/**
+ * .hero-image-media-lib
+ * Apply hero image to media library.
+ */
+.hero-image-media-lib {
+  .hero-image {
+    background-image: url('../assets/images/hero/ch_library.jpeg');
+  }
+}
+
+/**
+ * .hero-image-programs
+ * Apply hero image to programs page.
+ */
+.hero-image-programs {
+  .hero-image {
+    background-image: url('../assets/images/hero/org_programs.jpeg');
+  }
+}
+
+/**
+ * .hero-image-programs
+ * Apply hero image to programs page.
+ */
+.hero-image-event-listing {
+  .hero-image {
+    background-image: url('../assets/images/hero/org_events.jpeg');
+  }
+}
+
+/**
+ * .hero-image-members
+ * Apply hero image to members page.
+ */
+.hero-image-members {
+  .hero-image {
+    background-image: url('../assets/images/hero/org_member_directory.jpeg');
+  }
+}

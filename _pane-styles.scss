@@ -1,0 +1,149 @@
+/**
+ * pane-styles
+ * I contain a number of pane styles for panels.
+ *
+ * The theme makes use of a number of unique styles for panel panes. Each style
+ * has a background color and apperance for the header, and can modify the look
+ * of content.
+ *
+ *
+ *
+ */
+
+/**
+ * .gray-region
+ * I am a pane with a gray background and a black title
+ */
+.gray-region {
+
+  // background color for the region
+  background-color: #EBEBEB;
+
+  // headers for the region
+  h2.pane-title {
+   // the header should always be uppercase and gray
+   text-transform: uppercase;
+   color: $gray3;
+
+   // text should always be centered
+   text-align: center;
+
+   // there should always be one line between the header and the text
+   margin-bottom: 1em;
+  }
+
+  // add lines to the header
+  @include header-lines(
+    $bg-color: Black,
+    $header-selector: 'h2.pane-title, > h2'
+  );
+}
+
+/**
+ * .blue-region
+ * I am a pane with a white background and a blue header.
+ */
+.blue-region {
+  h2.pane-title {
+    display: block;
+    position: absolute;
+    padding: 17px 50px;
+    margin: 0 288px auto;
+    color: white;
+    z-index: 5;
+    background: rgba(0, 56, 105, 0.7);
+    b, strong {
+      font-weight: 600;
+    }
+  }
+}
+
+/**
+ * .dark-gray-region
+ * I am a pane with a dark-gray-background and a white header
+ */
+.dark-gray-region {
+
+  // this is the background color for dark regions
+  background-color: #444;
+
+  // headers for the region
+  h2.pane-title {
+    // the header should always be uppercase and gray
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+
+    // there should always be one line between the header and the text
+    margin-bottom: 1em;
+    padding-top: 0px;
+  }
+
+  // use standard header styles
+  @extend .standard-header;
+
+  // put the line mixin here
+  @include header-lines();
+
+  // make the lines white
+  h2:after, h2:before {
+    background-color: white;
+  }
+
+  // make the text white
+  #{$header-selectors} {
+    color: white;
+  }
+
+  // make any form labels white
+  label {
+    color: White;
+  }
+
+ /**
+  * Breakpoints for .dark-gray-region on small
+  */
+  @media screen and (max-width: $screen-sm-min) { 
+    h2.pane-title {
+     font-size: $font-size-h3 * 1.1; 
+    }
+  }
+} 
+
+/**
+ * .panel-pane-full-width
+ * I provide styles for panel panes that span the width of the browser.
+ */
+.panel-pane-full-width {
+  // maintain consistent margins on the top and bottom
+  //padding-top: 1em;
+  //margin-bottom: 1em;
+  padding-top: 1em;
+  padding-bottom: 3.2em;
+}
+
+/**
+ * .country-images
+ * Shadow for country images on country page.
+ */
+.country-images {
+  -webkit-box-shadow: 0px 0px 6px 1px rgba(180,193,240,1);
+  -moz-box-shadow: 0px 0px 6px 1px rgba(180,193,240,1);
+  box-shadow: 0px 0px 6px 2px rgba(180,193,240,0.5);
+  width: 100%;
+}
+
+/**
+ * .country-images
+ * Provides style for dark gray background class.
+ */
+.dark-gray-bg {
+  background-color: $gray4;
+}
+
+// Styles fot pane-content used on promo box pane.
+.pane-content,
+.panels-flexible-region-inside {
+
+  position: relative;
+}

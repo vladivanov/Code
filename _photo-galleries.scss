@@ -1,0 +1,149 @@
+/**
+ * components/photo-galleries
+ * Holding the styles for galleries on the site.
+ *
+ * I define a few sets of galleries:
+ * - gallery-pane, country-page-galleries: styles for multiple galleries
+ * - regional-page-gallery: styles for a single gallery on the page.
+ */
+
+// holding the style for photo gallery on country page.
+.gallery-pane,
+.country-page-galleries {
+
+  .field-name-field-ndi-country-image-gallery {
+
+    article {
+      background-color: white;
+      padding: .2em;
+    }
+
+    .field-item .even {
+      margin-bottom: 0;
+      font-size: $font-size-h5 * 1.2;;
+      line-height: 1.5em;
+      padding: .25em;
+    }
+
+    & > .field-items {
+      @include clearfix();
+      margin-bottom: 4em;
+    }
+  }
+}
+
+/**
+ * Breakpoints for photo gallery.
+ */
+@media screen and (max-width: $screen-sm-min) {
+  .gallery-pane,
+  .country-page-galleries {
+  }
+}
+
+/**
+ * .regional-page-gallery
+ * This is another style for image galleries
+ */
+.regional-page-gallery {
+
+  box-sizing: border-box;
+  position: relative;
+
+  // style the title on the pane
+  h2.pane-title {
+
+    @extend .standard-header;
+
+    margin: 0;
+    color: white;
+    margin-left: 51%;
+    position: absolute;
+    top: 1.75em;
+    font-weight: 100;
+    font-size: $gallery-font-size;
+    font-family: $cooper-hewitt;
+
+    b {
+      font-weight: 700;
+    }
+  }
+
+  // theme the galleries themselves
+  .gallery-sets {
+    
+    img {
+      border: 7px solid white;
+      @extend .fa-camera;
+    }
+
+    .gallery-set-text {
+      color: white;
+      margin-bottom: 1em;
+      padding-top: 4.5em;
+      padding-left: 0em;
+      font-size: $font-size-h5 * 1.2;
+      line-height: 1.5em;
+    }
+  }
+
+  .swiper-slide {
+    img, .gallery-set-text {
+      transition: all 300ms ease-in-out;
+      opacity: 0;
+    }
+  }
+
+  .swiper-slide-active {
+    img, .gallery-set-text {
+      opacity: 1;
+    }
+    .gallery-set-text {
+      transition-delay: 450ms;
+    }
+    img {
+      transition-delay: 300ms;
+    }
+  }
+
+  // theme the pagination
+  .swiper-pagination {
+    position: absolute;
+    text-align: left;
+    margin-left: 50%;
+    width: 50%;
+    bottom: 0em;
+  }
+
+  .collection {
+    margin-top: 5em;
+    margin-bottom: 6em;
+  }  
+}
+
+/**
+ * Breakpoints for .regional-page-gallery
+ */
+@media (min-width: $screen-sm) and (max-width: $screen-md) {
+  .regional-page-gallery {
+    h2.pane-title {
+      margin-left: 51%;
+    }
+    .gallery-sets {
+      .gallery-set-text {
+        padding-top: 3em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $screen-sm-min) {
+
+  .regional-page-gallery {
+    .swiper-pagination {
+      margin-left: 45%;
+    }
+  }
+}

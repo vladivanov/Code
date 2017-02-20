@@ -1,0 +1,182 @@
+/**
+ * @file components/buttons
+ * This is a set of styles for buttons on the site.
+ *
+ */
+
+.btn {
+  @include border-radius(0);
+  @include box-shadow(0px 2px 5px $dark-gray-text);
+
+  padding: .75em 1.5em;
+  color: white;
+  transition: all 150ms ease-in-out;
+
+  a {
+    color: white;
+    transition: all 150ms ease-in-out;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+
+.btn-transparent {
+  box-shadow: none;
+  border: 1px solid #fff;
+}
+
+.btn-purple {
+  background: $purple;
+
+  color: white;
+  &:hover {
+    color: white;
+    background:$purple-secondary;
+  }
+
+}
+
+/**
+ * btn-blue
+ * This is a style blue buttons.
+ */
+.btn-blue {
+  background: $blue-primary;
+
+  color: white;
+  &:hover {
+    color: white;
+    background: $blue-secondary;
+  }
+
+}
+
+/**
+ * btn-blue
+ * This is a style for buttons with a white background.
+ */
+.btn-white {
+  background-color: white;
+  border: 1px solid $gray-border;
+  box-shadow: none;
+  text-transform: uppercase;
+  font-weight: bold;
+
+  color: $green;
+  &:hover {
+    color: white;
+    background-color: $green;
+  }
+
+}
+
+
+/**
+ * btn-search
+ * This is a style for buttons with a search icon.
+ */
+.btn-search {
+  width: 124px;
+  height: 39.4px;
+  left: 0px;
+  text-transform: uppercase;
+  font-size: 0.925em;
+  padding:0px;
+  margin-left: -3px;
+
+  // Adding the search icon.
+  &:before {
+    margin-right: 5%;
+    content: '\f002';
+    font-family: FontAwesome;
+    font-size: $font-size-menu;
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+  }
+
+}
+
+/**
+ * btn-search
+ * This is a style for buttons with a calendar icon.
+ */
+.btn-calendar {
+  width: 40px;
+  height: 40px;
+  left: 0px;
+  text-transform: uppercase;
+  font-size: $font-size-h2;
+  padding:0px;
+  margin-right: 15px;
+  line-height:0.8em;
+
+  // Adding the calendar icon.
+  &:before {
+    content: '\f073';
+    font-family: FontAwesome;
+  }
+}
+
+/**
+ * btn-lg
+ * This is a style for buttons that are a little larger than normal.
+ */
+.btn-lg {
+  padding: 0.63em 3em;
+  margin-top: 0em;
+  font-size:16px;
+
+  //Breakpoints for small to medium screen.
+  @media (min-width: $screen-sm) and (max-width: $screen-md) {
+    padding: 0.5em 1.7em;
+    font-size: 14px;
+  }
+
+}
+
+/**
+ * btn-xl
+ * This is a style for buttons that are a much larger than normal.
+ */
+.btn-xl {
+
+}
+
+
+/**
+ * btn-sm
+ * This is a style for buttons that are smaller than normal.
+ */
+.btn-sm {
+  padding: 0.55em 2.5em;
+  font-size: 1.3em !important;
+}
+
+/**
+ * btn-100
+ * This is a style for buttons that is 100% of the width of the contaiing element.
+ */
+.btn-100 {
+  width: 100%;
+}
+
+
+/**
+ * btn-centered
+ * This is a style for buttons that are centered.
+ */
+.btn-100 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/**
+ * Fix text color on .btn-default
+ */
+.btn-default {
+  color: $dark-gray !important;
+}

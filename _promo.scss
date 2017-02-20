@@ -1,0 +1,101 @@
+/**
+ * @file components/promo
+ * This is a set of styles for promo boxes for use in the site
+ *
+ */
+
+/**
+ * promo
+ * This is a promo box
+ */
+.promo {
+  border: 1px solid #dddddd;
+  text-align: center;
+  display:block;
+  width:100%;
+  min-width: 100%;
+  margin-top:3.5em;
+  .btn {
+    margin-top:1.375em;
+    margin-bottom:1.875em;
+    font-size: $font-size-grid-title;
+    text-transform: uppercase;
+    padding: 0.75em 2.8em;
+  }
+  .promo-title {
+      margin-top:1.4em;
+      font-size:$font-size-promo;
+  }
+  .promo-body {
+    padding:0.2em 4.8em;
+  }
+}
+
+// Breakpoints for extra small view.
+@media all and (max-width: $screen-xs) {
+
+
+
+  .promo .btn {
+    padding: .55em 1.1em;
+    font-size: $font-size-h3;
+    font-weight:600;
+  }
+
+  .promo {
+    margin-top:2.5em;
+
+    .promo-body {
+      padding:0.1em 2.5em;
+      font-size: $font-size-eyebrow;
+    }
+
+    .promo-title {
+        margin-top:0.5em;
+        font-size:$font-size-promo;
+    }
+  }
+}
+
+// Breakpoints for small screens.
+@media (min-width: $screen-xs) and (max-width: $screen-sm) {
+
+  .promo .btn {
+    padding: .75em 0.6em;
+  }
+}
+@media (min-width: $screen-sm) and (max-width: $screen-md) {
+
+  .promo .btn {
+    padding: .75em 1em;
+  }
+}
+
+/**
+ * promo-greeting
+ * This is a promo box with a greeting at the top of a page.
+ */
+.promo-greeting {
+  text-align:left;
+  border: none;
+  .promo-body {
+    padding:0.2em 2em;
+  }
+  .btn {
+    margin-bottom:0px;
+    margin-top:4.7em;
+    padding: 0.75em 2.8em;
+    width:100%;
+  }
+  .promo-title {
+  padding-left:0.8em;
+  }
+
+}
+
+// Breakpoints for mobile view.
+@media all and (max-width: $screen-sm) {
+  .promo-greeting .btn {
+    padding: .75em 0.6em;
+  }
+}

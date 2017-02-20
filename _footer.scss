@@ -1,0 +1,161 @@
+/**
+ * @file components/footer
+ * This is a set of styles for the footer in the site
+ *
+ */
+
+/**
+ * footer
+ * This is the style for the footer
+ */
+
+.footer {
+
+  .region-top-bar-button {
+    #block-boxes-clpha-header-become-member-btn {
+      display:none;
+    }
+  }
+
+  //Breakpoints for small to medium screens.
+  @media (min-width: $screen-sm) and (max-width: $screen-md) {
+
+    .logo {
+      -moz-transform:scale(0.7);
+      -webkit-transform:scale(0.7);
+      transform:scale(0.7);
+      margin-left: -18%;
+    }
+  }
+
+
+
+  // Adding padding-left/right to the footer menus.
+  .footer-menus {
+    padding: 0px 16px;
+
+    // Taking out the hover background color.
+    a:hover, a:focus {
+      background-color: transparent;
+    }
+  }
+
+  // Styling the purple buttons in the footer.
+  .btn-purple {
+    margin-bottom: 0.7em;
+    line-height: 1.5em;
+    box-shadow: 0px 2px 5px #444444;
+
+    a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+    }
+
+    //Breakpoints for small to medium screens.
+    @media (min-width: $screen-sm) and (max-width: $screen-md) {
+
+      width: 180px;
+      a {
+        font-size:$font-size-eyebrow;
+      }
+    }
+
+  }
+
+  // Styling the menu links in the footer
+  #block-menu-menu-clpha-footer-menu-left, #block-menu-menu-clpha-footer-menu-right,   {
+    padding-top:10px;
+
+    .nav > li > a {
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 1.2em;
+    }
+  }
+
+  // hiding the menus' title in the footer.
+  #block-menu-menu-clpha-footer-menu-left, #block-menu-menu-clpha-footer-menu-right {
+
+    > h2 {
+      display: none;
+    }
+  }
+
+  // Adding some top padding on the purple buttons in the footer.
+  div.region-footer-right {
+    padding-top: 23px;
+  }
+
+  div.region-footer-left {
+    .boxes-box-content {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.2em;
+      padding-top: 14px;
+    }
+  }
+}
+
+// Styling the subfooter under the footer.
+.subfooter {
+  background-color: #4B7599;
+  color: white;
+  padding: 10px 0px;
+  font-weight: 400;
+  line-height: 1.2em;
+  font-size: 14px;
+  a {
+    text-decoration: none;
+    color: white;
+
+  }
+}
+
+// Breakpoints for mobile screen.
+@media screen and  (max-width: $screen-sm) {
+  .footer {
+
+    .footer-menus {
+      padding: 0px 2px;
+    }
+
+    // Putting the social icons in the middle on mobile screen.
+    #block-boxes-clpha-social-icons {
+      text-align: center;
+      #boxes-box-clpha_social_icons {
+        display:inline-block;
+      }
+
+    }
+
+    // Centering the purple buttons on mobile screen.
+    div.region-footer-right {
+      text-align:center;
+      margin:0 auto;
+      padding-bottom: 1em;
+    }
+
+    // Centering the contact text info in the footer on mobile screen.
+    #boxes-box-clpha_contact_info {
+      text-align: center;
+    }
+
+    // Centering the logo in the footer on mobile screen.
+    #block-boxes-clpha-logo-footer {
+      text-align: center;
+      margin:0 auto;
+    }
+
+    // Taking out the margins on the left menu in the footer.
+    #block-menu-menu-clpha-footer-menu-left {
+      margin-left: 0em;
+    }
+
+    // Aligning the menu right text to right on mobile view.
+    #block-menu-menu-clpha-footer-menu-right {
+      text-align: right;
+    }
+
+  }
+}

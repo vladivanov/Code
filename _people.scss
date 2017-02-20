@@ -1,0 +1,53 @@
+/**
+ * components/people
+ * This is a file with a list of styles used on the leadership and staff page.
+ *
+ */
+/**
+ * .people-image-container
+ * Styles for groups of people images in cirles on leadership and staff page.
+ */
+.people-image-container {
+  height:400px;
+  /**
+   * This is the picture of the person
+   */
+  .person-image {
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    margin: 0em auto;
+    display: block;
+
+    &:hover {
+      transform: scale(1.05);
+      opacity: .9;
+      transition: transform 150ms ease-in-out, opacity 150ms ease-in-out;
+    }
+  }
+
+  /**
+   * This is all the text appearing near the person image.
+   */
+  figcaption {
+    margin-top: 1em;
+    text-align: center;
+    padding-bottom: 3em;
+
+    .person-name {
+      font-weight: 500;
+      font-size: 1.32em;
+      color: $blue;
+    }
+    .person-title {
+      color: $blue;
+    }
+  }
+}
+
+/**
+ * This is the height of the row with pictures
+ */
+.view-display-id-leadership_pane .views-row {
+  height: 400px;
+}

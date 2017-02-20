@@ -1,0 +1,98 @@
+/**
+ * @file components/bar
+ * This is a set of styles for a bar that spans the width of a container for use in the site
+ *
+ */
+
+/**
+ * bar
+ * This is a basic bar
+ */
+.bar {
+  @include clearfix;
+
+  background-color: $gray-bar;
+  display: block;
+  width: 100%;
+  padding:10px 40px 30px 60px;
+  border: 1px solid $gray-border;
+
+  h3 {
+    color: $dark-gray-text;
+    line-height: 1.2em;
+    font-size: $font-size-menu;
+    font-weight:600;
+  }
+
+  a, p {
+    color: $dark-gray-text;
+    line-height: 1.2em;
+    font-size: $font-size-menu;
+  }
+
+  @media screen and (max-width: $screen-xs) {
+      padding:$grid-gutter-width/2;
+  }
+}
+
+/**
+ * bar-filter
+ * This is a bar with filters.  This should only contain styles specific to the bars with filters.
+ */
+.bar-filter {
+
+}
+
+/**
+ * bar-centered
+ * This is a bar with centered content.
+ */
+.bar-centered {
+  display: block;
+  padding:10px 40px 20px 40px;
+  text-align: center;
+
+  a {
+    text-transform: uppercase;
+    margin-right:20px;
+    margin-left:20px;
+    font-weight: 600;
+    line-height: 1.4em;
+    text-decoration: none;
+  }
+
+ // This span is styling the lines between the menu buttons
+  span {
+    font-size: 30px;
+    line-height: 1em;
+    font-weight: 100;
+  }
+}
+
+
+/**
+ * bar-download
+ * This is a bar with download links.
+ */
+.bar-download {
+  color: $dark-gray-text;
+  padding: 17px 50px;
+  border-top: 1px solid $gray-border;
+
+  strong {
+    color: $dark-gray-text;
+  }
+
+  .spacer {
+    margin-left: 0.5em;
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  //Hiding the download bar on mobile view.
+  @media screen and (max-width: $screen-xs) {
+    display:none;
+  }
+
+}

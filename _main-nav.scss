@@ -1,0 +1,312 @@
+/**
+ * @file components/main-nav
+ * This is a set of styles for the main navigation menu on the site.
+ *
+ */
+
+/**
+ * main-nav
+ * This is a style for the main bav bar.
+ */
+.main-nav {
+
+  margin-bottom: 0;
+  background-color: white;
+  @include box-shadow(0px 5px 5px $dark-gray);
+  padding-top: 0.7em;
+  padding-bottom: 0.8em;
+  z-index: 2;
+
+  // Breakpoins for extra small screens.
+  @media screen and (max-width: $screen-xs) {
+    padding-top: 0em;
+    padding-bottom: 0em;
+    box-shadow: 0px 1px 6px #444444;
+    -webkit-box-shadow: 0px 1px 6px #444444;
+    .logo {
+      float:none !important;
+      text-align: center;
+      padding-top:10px;
+      margin:0 auto;
+      height: 60px;
+      transform: scale(0.85);
+      -ms-transform: scale(0.85);
+      -webkit-transform: scale(0.85);
+    }
+  }
+
+  @media (min-width: $screen-xs) and (max-width: $screen-sm)  {
+    padding-bottom: 0em;
+    padding-top:0px;
+    box-shadow: 0px 1px 6px #444444;
+    -webkit-box-shadow: 0px 1px 6px #444444;
+    .logo {
+      margin:0 auto;
+      padding-top:60px;
+      float:none !important;
+      transform: scale(0.7);
+      -ms-transform: scale(0.7);
+      -webkit-transform: scale(0.7);
+    }
+  }
+
+  //Taking out the logo underline effect on hover.
+  .logo:hover {
+    text-decoration: none;
+  }
+
+  .navbar-main {
+
+    .navbar-collapse {
+    padding:0px;
+    }
+
+    ul.menu {
+      // TODO: rework selectors so this breakpoint isn't needed.
+      @media (min-width: $grid-float-breakpoint) {
+        margin-top: 0.5em;
+        float: right;
+
+        li {
+          border-left: 1px solid $light-gray;
+        }
+
+        li.first {
+          border-left: 0;
+        }
+
+      }
+
+
+    }
+
+    a {
+      color: $dark-gray;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: $font-size-menu;
+      padding: 14px 21px;
+    }
+
+    // Taking out the hover background color.
+    a:hover, a:focus {
+      background-color: transparent;
+    }
+
+    //Breakpoints for small to medium screen.
+    @media (min-width: $screen-sm) and (max-width: $screen-md) {
+
+
+
+      a {
+        padding: 14px 14px;
+      }
+
+      ul.menu {
+         li:nth-child(4) {
+            margin-right:2em;
+         }
+      }
+
+    }
+  }
+
+  // Mobile styling.
+
+  @media (max-width: $grid-float-breakpoint-max) {
+    ul.menu {
+      float: none;
+      margin-top: 0;
+      margin-bottom: 0;
+
+      li {
+        border-left: none;
+        background-color: $blue-primary;
+        text-align: center;
+        border-bottom: 1px solid $blue-secondary;
+
+        a {
+          padding-top: 0.95em;
+          padding-bottom: 0.95em;
+          color: white;
+
+          &:hover {
+            background-color: transparent;
+          }
+        }
+
+        // Second level menu items
+
+        ul {
+          li {
+            background-color: white;
+            border-bottom: 1px solid $gray;
+            a {
+              padding-top: 1em !important;  // TODO: figure out how to override the padding without !important
+              padding-bottom: 1em !important;
+              color: $dark-gray;
+            }
+          }
+        }
+
+        // Expanded top level item.o
+        &.open{
+          border-bottom: 0;
+          padding-bottom: 0;
+
+          & > a {
+            @include box-shadow(0px 5px 5px $gray);
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+ * logo
+ * This is a style for the logo.
+ */
+.logo {
+  background-image: url("../assets/images/clpha_final_color.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 210px;
+  height: 53px;
+  display: block;
+
+  // Mobile Style.
+  @media screen and (max-width: $screen-xs) {
+    width: 150px;
+    height: 35px;
+  }
+
+  //Breakpoints for extra small to small screen.
+  @media (min-width: $screen-xs) and (max-width: $screen-sm) {
+     margin-left: 90px;
+     width: 180px;
+     height: 50px;
+  }
+
+  //Breakpoints for small to medium screen.
+  @media (min-width: $screen-sm) and (max-width: $screen-md) {
+    width: 155px;
+    margin-left: 0px;
+  }
+}
+
+
+
+
+
+/**
+ * header-menu-button
+ * This is a style for button in the main nav bar.
+ */
+
+.header-menu-button {
+  margin-top: 0.7em;
+
+  a {
+    float: right;
+  }
+}
+/**
+ * navbar-toggle
+ * This is a style for button that toggles the nav on mobile.
+ */
+.navbar-toggle  {
+  background-color: transparent;
+  color: white;
+  border-radius: 0;
+  padding-top: 15px;
+  margin: 0;
+  right: -20px;
+  // margin-right: 5px; // Offset padding from column class.
+  height: 60px;
+  width: 80px;
+
+  .icon-bar {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: $blue-primary;
+    height: 4.5px;
+    width: 24px;
+  }
+
+}
+
+.navbar-toggle-active {
+   background-color: $blue-primary;
+   .icon-bar {background-color: white;}
+}
+
+// This is a style for menu items that are hidden on large screens and shown with a different style on mobile.
+
+li.menu-item-mobile-highlight {
+  @media (min-width: $grid-float-breakpoint) {
+    display: none !important;
+  }
+  background-color: $purple !important; // This is ugly.  Figure out a way to avoid using it.
+}
+
+// Hide expanded menu items on desktop.
+.menu-hide-expanded {
+  @media (min-width: $grid-float-breakpoint) {
+    .expanded {
+
+      .caret {
+        display: none;
+      }
+      ul {
+        display: none;
+      }
+    }
+  }
+
+  .nav .open > a {
+    background-color: transparent;
+  }
+
+  .caret {
+    border: none;
+    position: absolute;
+    right: 1.5em;
+    top: 0.5em;
+
+    &:after {
+      content: '\f107';
+      font-family: FontAwesome;
+      color: white;
+      position: absolute;
+      right: 0;
+      font-size: 2em;
+      cursor: pointer;
+    }
+  }
+
+  .open {
+    .caret {
+
+      &:after {
+        content: '\f106';
+      }
+    }
+  }
+}
+
+.dropdown-menu {
+  padding: 0;
+}
+
+/**
+ * menu-mobile-only
+ * This is a style to only display a menu on mobile.
+ */
+
+.menu-mobile-only {
+  @media (min-width: $grid-float-breakpoint) {
+    display: none;
+  }
+}

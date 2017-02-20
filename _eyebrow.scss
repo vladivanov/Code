@@ -1,0 +1,111 @@
+/**
+ * @file components/eyebrow
+ * This is a set of styles for the eyebrow menu on the site.
+ *
+ */
+
+/**
+ * eyebrow
+ * This is the style for the eyebrow menu
+ */
+
+.eyebrow {
+  background-color: $blue-primary;
+
+  .nav a {
+    float: left;
+    color: white;
+
+    &:hover {
+      // Disable the hover until Alex supplies colors.
+      background-color: $blue-primary;
+    }
+
+  }
+}
+
+/**
+ * eyebrow-page-top
+ * This is the style for the eyebrow menu at the top of pages.
+ */
+
+.eyebrow-page-top {
+
+  // Only enforce height when everything fits on one line.
+  @media (min-width: $screen-md-min) {
+    height: 32px;
+  }
+
+  // Hide the eyebrow on mobile.
+  @media (max-width: $screen-xs-max) {
+   display: none;
+  }
+
+  h2 {
+    margin: 0;
+  }
+
+  .nav {
+    text-align: right;
+    padding-right:25px;
+
+    @media (min-width: $screen-sm-min) and (max-width: $screen-md-max) {
+     padding-right:25px;
+    }
+
+    li {
+      display: inline-block;
+
+      a {
+        padding-top: 0.5em;
+        padding-bottom: 0;
+        font-size: $font-size-eyebrow;
+        font-weight: 300;
+
+        &:focus {
+          background-color: transparent;
+          outline:none;
+        }
+
+      }
+
+    }
+  }
+
+  .region-top-bar-button {
+    text-align: right;
+    position: relative;
+
+    .log-in-btn {
+      right: -108px;
+      top:0px;
+      position:absolute;
+      a {
+        padding: 0.65em 2em;
+
+        //Breakpoints for small to medium screen.
+        @media (min-width: $screen-sm) and (max-width: $screen-md) {
+          padding: 0.55em 1em;
+          right: 108px;
+        }
+      }
+    }
+
+    .btn {
+      position: absolute;
+      right: 108px;
+      top: 0;
+      font-weight: 300;
+      font-size:14px;
+      z-index: 100;
+      padding: 0.65em 2em;
+
+      //Breakpoints for small to medium screen.
+      @media (min-width: $screen-sm) and (max-width: $screen-md) {
+        padding: 0.55em 1em;
+        right: 70px;
+        font-size:$font-size-eyebrow;
+      }
+    }
+  }
+}
